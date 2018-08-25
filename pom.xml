@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.devops.calculator.addition</groupId>
+	<artifactId>Addition</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.devops.calculator.main.MainClass</mainClass>
+							<!-- java -jar target/Addition-1.0.0-SNAPSHOT.jar -->
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<distributionManagement>
+	<repository>
+		<id>deployment</id> <!-- this ID should match with server id which we configure in settings.xml file. -->
+		<name>Nexus Release Repository</name>
+		<url>http://54.147.239.27:8081/nexus/content/repositories/releases/</url>
+	</repository>
+	<snapshotRepository>
+		<id>deployment</id>
+		<name>Nexus Snapshots Repository</name>
+		<url>http://54.147.239.27:8081/nexus/content/repositories/snapshots/</url>
+	</snapshotRepository>
+</distributionManagement>
+</project>
