@@ -7,8 +7,17 @@ pipeline {
       }
     }
     stage('build') {
-      steps {
-        sh '/root/apache-maven-3.5.4/bin/mvn -V clean compile'
+      parallel {
+        stage('build') {
+          steps {
+            sh '/root/apache-maven-3.5.4/bin/mvn -V clean compile'
+          }
+        }
+        stage('echo') {
+          steps {
+            echo 'build completed'
+          }
+        }
       }
     }
   }
