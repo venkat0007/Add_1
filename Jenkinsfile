@@ -6,10 +6,9 @@ pipeline {
         git(branch: 'master', url: 'https://github.com/venkat0007/Add_1.git', credentialsId: 'jenkinsgithub')
       }
     }
-    stage('build') {
-      agent any
+    stage('Build') {
       steps {
-        sh '/root/apache-maven-3.5.3/bin/mvn -V clean compile'
+        sh '\'"/root/apache-maven-3.5.4/bin/mvn" -V clean package\''
       }
     }
   }
