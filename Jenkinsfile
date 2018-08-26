@@ -20,5 +20,10 @@ pipeline {
         }
       }
     }
+    stage('') {
+      steps {
+        git(url: 'https://github.com/DIGITALAPPLICATION/WebApp.git', branch: 'master', credentialsId: 'jenkinsgithub', poll: true)
+      }
+    }
   }
 }
