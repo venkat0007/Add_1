@@ -6,9 +6,9 @@ pipeline {
         git(branch: 'master', url: 'https://github.com/venkat0007/Add_1.git', credentialsId: 'jenkinsgithub')
       }
     }
-    stage('build') {
+    stage('') {
       steps {
-        bat 'mvn clean package'
+        sh 'mvn package'
       }
     }
   }
