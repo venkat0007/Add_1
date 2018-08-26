@@ -9,7 +9,7 @@ pipeline {
     stage('build') {
       agent any
       steps {
-        sh 'mvn package'
+        sh '/root/apache-maven-3.5.3/bin/mvn" -V clean compile\''
       }
     }
   }
